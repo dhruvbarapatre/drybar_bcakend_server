@@ -27,7 +27,11 @@ const signUp = async (req, res) => {
             if (hash) {
                 const userdata = { name, email, password: hash, otp: otpNumber }
                 const token = jwt.sign(userdata, process.env.secret_key)
-                res.status(200).cookie("drybar_token", token).json(resmail.message)
+                res.status(200).cookie("drybar_token", token, {
+  httpOnly: true, 
+  secure: true, 
+  sameSite: "None"
+}).json(resmail.message)
             } else {
                 return res.status(400).json({ err: "Error Occured" })
             }
@@ -89,7 +93,11 @@ const signIn = async (req, res) => {
             const { password, ...userId } = userdata;
             const token = jwt.sign(userId, process.env.secret_key);
             res
-                .cookie("drybar_token", token)
+                .cookie("drybar_token", token, {
+  httpOnly: true, 
+  secure: true,
+  sameSite: "None"
+})
                 .status(200)
                 .json({ message: "User Signed In Succesfully..." });
         });
