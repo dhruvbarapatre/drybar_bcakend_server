@@ -13,9 +13,9 @@ app.use(cors({
     origin:"http://localhost:5173",
     credentials:true
 }))
+app.use(cookieParser()) 
 app.use(express.json())
 app.set("view engine", "ejs")
-app.use(cookieParser()) 
 
 app.use("/user", userRoutes)
 app.use("/cart", cartRoutes)
