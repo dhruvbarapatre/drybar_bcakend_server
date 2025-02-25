@@ -31,7 +31,7 @@ A full-stack e-commerce application with authentication, OTP verification, and a
 
 ## 📦 Installation
 ### 🖥️ Frontend Setup
-🔗 Backend Repository: [Drybar Backend Server](https://github.com/dhruvbarapatre/drybar_clone_client)
+🔗 Backend Repository: [Drybar clone Client](https://github.com/dhruvbarapatre/drybar_clone_client)
 ```sh
 # Clone the repository
 git clone https://github.com/dhruvbarapatre/drybar_clone_client.git
